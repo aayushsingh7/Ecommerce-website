@@ -29,7 +29,7 @@ const Register = () => {
     if(userInput.email && userInput.password && userInput.name){
       try {
         setLoading(true)
-        let registerUser = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/register',{
+        let registerUser = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/register',{
           method:"POST",
          credentials:"include",
           headers:{"Content-Type":"application/json"},

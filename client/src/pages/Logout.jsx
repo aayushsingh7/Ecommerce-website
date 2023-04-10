@@ -12,7 +12,7 @@ const Logout = () => {
 
     const logout = async () => {
         try {
-            let lg = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/logout', { method: "GET", credentials: "include" })
+            let lg = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/logout', { method: "GET", credentials: "include" })
             let response = await lg.json()
             if (lg.ok) {
                notification("Logout successfully")

@@ -36,18 +36,18 @@ const SearchResults = () => {
     try {
       let url;
       if (query && !maxPrice && !minPrice && !minRatings && !maxRatings) {
-        url = `https://ecommerce-website-ocdk.onrender.com/api/v1/search?query=${query}`;
+        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${query}`;
       } else if (query && minPrice && maxPrice) {
        
-        url = `https://ecommerce-website-ocdk.onrender.com/api/v1/search?query=${
+        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${
           query ? query.includes("all") ? "a" : query : category ? category : seller}&maxPrice=${maxPrice}&minPrice=${minPrice}`;
       } else if (minRatings && maxRatings) {
       
-        url = `https://ecommerce-website-ocdk.onrender.com/api/v1/search?query=${query ? query.includes("all") ? "a" : query : category ? category : seller}&maxRatings=${maxRatings}&minRatings=${minRatings}`;
+        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${query ? query.includes("all") ? "a" : query : category ? category : seller}&maxRatings=${maxRatings}&minRatings=${minRatings}`;
       } else if (category) {
-        url = `https://ecommerce-website-ocdk.onrender.com/api/v1/search?category=${category}`;
+        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?category=${category}`;
       } else {
-        url = `https://ecommerce-website-ocdk.onrender.com/api/v1/search?seller=${seller}`;
+        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?seller=${seller}`;
       }      
 
       setResult(["search"])
@@ -68,7 +68,7 @@ const SearchResults = () => {
     try {
       setResult(["search"])
       setLoading(true)
-      let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/all-product',{
+      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/all-product',{
         method:"GET",
         credentials:"include",
         headers:{"Content-Type":"application/json"}

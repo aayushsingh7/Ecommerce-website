@@ -22,7 +22,7 @@ const Home = () => {
   const getBoxData = async () => {
     try {
       setLoadingBox(true)
-      let apiData = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/getData', { method: "GET", credentials: "include" })
+      let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/getData', { method: "GET", credentials: "include" })
       let response = await apiData.json()
       if (apiData.ok) {
         setData(response)
@@ -37,7 +37,7 @@ const Home = () => {
   const getSliderData = async () => {
     setLoadingSlider(true)
     try {
-      let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/all-product', { method: "GET", credentials: "include" })
+      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/all-product', { method: "GET", credentials: "include" })
       let response = await data.json()
       if (data.ok) {
         setLoadingSlider(false)

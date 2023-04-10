@@ -15,7 +15,7 @@ const ColumnBoxContainer = ({ loading, data }) => {
   let socket;
 
   // useEffect(() => {
-  //   socket = io('https://ecommerce-website-ocdk.onrender.com')
+  //   socket = io('https://ecommerce-website-9k8k.onrender.com')
 
   //   socket.on('newData', (response) => {
   //     setCartData(prevCartData => {

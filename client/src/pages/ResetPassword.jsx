@@ -20,7 +20,7 @@ const ResetPassword = () => {
     try {
       document.title = "Loading..."
       setLoading(true)
-      let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/forgot-password', {
+      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/forgot-password', {
         method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email })
       })

@@ -50,7 +50,7 @@ const AddReview = ({ setReviews , productId }) => {
           let formData = new FormData(formRef.current)
           formData.append('stars',star)
           formData.append('productId',productId)
-          let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/add-review',{
+          let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/add-review',{
             method:"PUT",
             credentials:"include",
             body:formData,

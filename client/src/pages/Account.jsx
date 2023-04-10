@@ -33,7 +33,7 @@ const Account = () => {
       setUser((u)=> {
         return {...u, name:userData.name, address:userData.address}
       })
-      let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/edit-details', {
+      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/edit-details', {
        method: "PUT",
       credentials: "include", 
       headers: { "Content-Type": "application/json" }, 

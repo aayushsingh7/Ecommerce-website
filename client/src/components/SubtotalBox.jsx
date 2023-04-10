@@ -13,7 +13,7 @@ const SubtotalBox = () => {
 
     const addToCart = async () => {
         try {
-            let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/add-to-cart', {
+            let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/add-to-cart', {
                 method: "PUT",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },

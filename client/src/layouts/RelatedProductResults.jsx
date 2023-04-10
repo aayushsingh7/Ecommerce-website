@@ -16,7 +16,7 @@ const RelatedProductResults = ({ data }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://ecommerce-website-ocdk.onrender.com/api/v1/search?query=${"a"}&page=${pageNumber}`
+          `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${"a"}&page=${pageNumber}`
         );
         const data = await response.json();
         setRelatedProduct((prevData) => [...prevData, ...data]);

@@ -15,7 +15,7 @@ const Verifying = () => {
 
       const verifyUser = async()=> {
         try {
-             let user  = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/check-user',{method:"GET",credentials:"include"})
+             let user  = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/check-user',{method:"GET",credentials:"include"})
              let response = await user.json()
              if(user.ok){
                 setUser(response)

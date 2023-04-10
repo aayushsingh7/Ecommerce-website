@@ -11,7 +11,7 @@ const QuantityUpdate = ({ product, quantity, setQuantity }) => {
             const updateData = cartData.map(item => item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item);
             setCartData(updateData);
 
-            let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/increase-qty', {
+            let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/increase-qty', {
                 method: "PUT",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },
@@ -29,7 +29,7 @@ const QuantityUpdate = ({ product, quantity, setQuantity }) => {
             setCartData(updateData);
             
 
-            let data = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/decrease-qty', {
+            let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/decrease-qty', {
                 method: "PUT",
                 credentials: "include",
                 headers: { "Content-Type": "application/json" },

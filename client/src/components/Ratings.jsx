@@ -19,7 +19,7 @@ const Ratings = ({ data, productId }) => {
 
   const updateAvgRev = async () => {
     try {
-      let update = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/update-review', {
+      let update = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/update-review', {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

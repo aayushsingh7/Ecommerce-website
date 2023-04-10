@@ -12,7 +12,7 @@ const ProductPriceDetails = ({ data }) => {
   const addToCart = async () => {
     setCartData([...cartData, data])
     try {
-      let apiData = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/add-to-cart', {
+      let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/add-to-cart', {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -30,7 +30,7 @@ const ProductPriceDetails = ({ data }) => {
       setCartData((prevCartData) => {
         return prevCartData.filter((cart) => cart._id !== data._id)
       })
-      let apiData = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/remove-from-cart', {
+      let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/remove-from-cart', {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ const ProductPriceDetails = ({ data }) => {
   const addToFevorates = async () => {
     try {
       setFevorates([...fevorates, data])
-      let apiData = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/add-to-fevorates', {
+      let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/add-to-fevorates', {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -64,7 +64,7 @@ const ProductPriceDetails = ({ data }) => {
       setFevorates((prevFevData) => {
         return prevFevData.filter((item) => item._id !== data._id)
       })
-      let apiData = await fetch('https://ecommerce-website-ocdk.onrender.com/api/v1/remove-from-fevorates', {
+      let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/remove-from-fevorates', {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

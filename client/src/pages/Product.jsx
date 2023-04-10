@@ -21,7 +21,7 @@ const Product = () => {
   const getSingleProduct = async () => {
     try {
       setLoading(true)
-      let getData = await fetch(`https://ecommerce-website-ocdk.onrender.com/api/v1/single-product/${params.id}`, { method: "GET", credentials: "include" })
+      let getData = await fetch(`https://ecommerce-website-9k8k.onrender.com/api/v1/single-product/${params.id}`, { method: "GET", credentials: "include" })
       let response = await getData.json()
       if (getData.ok) {
         setLoading(false)
