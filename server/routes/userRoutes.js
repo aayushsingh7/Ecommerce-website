@@ -1,0 +1,25 @@
+const express = require('express')
+const user_routes = express()
+const cookieParser = require('cookie-parser')
+user_routes.use(cookieParser())
+const userController = require('../controllers/userController')
+const userAuthentication = require('../middleware/userAuthentication')
+
+user_routes.post('/login',userController.login)
+user_routes.post('/register',userController.register)
+user_routes.put('/add-to-cart',userAuthentication,userController.addToCart)
+user_routes.put('/remove-from-cart',userAuthentication,userController.removeFromCart)
+user_routes.put('/add-to-fevorates',userAuthentication,userController.addToFevorates)
+user_routes.put('/remove-from-fevorates',userAuthentication,userController.removeFromFevorates)
+user_routes.get('/check-user',userAuthentication,userController.checkUser)
+user_routes.put('/increase-qty',userAuthentication,userController.increaseQty)
+user_routes.put('/decrease-qty',userAuthentication,userController.decreaseQty)
+user_routes.put( '/edit-details', userAuthentication , userController.editUserInfo)
+user_routes.post('/forgot-password',userController.forgotPassword)
+user_routes.get('/reset-password/:id/:token',userController.resetPasswordClient)
+user_routes.post('/reset-password/:id/:token',userController.resetPassword) 
+user_routes.get('/success',async(req , res)=> {res.render('success')})
+user_routes.get('/logout',userAuthentication,userController.logout)
+
+
+module.exports= user_routes;
