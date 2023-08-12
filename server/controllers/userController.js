@@ -56,7 +56,7 @@ const login = async (req, res) => {
     let verifyPassword = await bcryptjs.compare(password, isUserExists.password)
     if (!verifyPassword) { return res.status(401).send({ success: false, msg: "Invalid password" }) }
     let token = await generateToken(isUserExists._id)
-    res.cookie('amazon', token, { expire: "10d", httpOnly: true, secure: false })
+    res.cookie('amazon', token, { expire: "10d", httpOnly: true, secure: true })
     res.status(200).send({ success: true, msg: "Login successfully" })
   } catch (err) { res.status(500).send(err.message) }
 }
