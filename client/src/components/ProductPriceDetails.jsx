@@ -106,13 +106,13 @@ const ProductPriceDetails = ({ data }) => {
 
           <div className="btn-options">
             {
-              !user._id ? <NavLink to={'/login'} style={{width:"100%"}}><button className="add-cart">Add to Cart</button></NavLink> :
+              !user._id ? <NavLink to={'/login'} style={{ width: "100%" }}><button className="add-cart">Add to Cart</button></NavLink> :
                 cartData.map((res) => res._id).includes(data._id) ?
                   <button className="add-cart" onClick={removeFromCart}>Remove from cart</button> :
                   <button className="add-cart" onClick={addToCart}>Add to Cart</button>
             }
             {
-              !user._id ? <NavLink to={'/login'} style={{width:"100%"}}><button className='buy-now'>Buy Now</button></NavLink> : <NavLink to={'/order'} style={{ textDecoration: "none", width: "100%" }}> <button className='buy-now'>Buy Now</button></NavLink>
+              !user._id ? <NavLink to={'/login'} style={{ width: "100%" }}><button className='buy-now'>Buy Now</button></NavLink> : <NavLink to={'/order'} style={{ textDecoration: "none", width: "100%" }}> <button className='buy-now'>Buy Now</button></NavLink>
             }
           </div>
 
@@ -129,7 +129,7 @@ const ProductPriceDetails = ({ data }) => {
           </div>
 
           {
-            !user._id ? <NavLink to={'/login'} style={{width:"100%"}}> <button className='wish-list'>Add to Wish List</button></NavLink> :
+            !user._id ? <NavLink to={'/login'} style={{ width: "100%" }}> <button className='wish-list'>Add to Wish List</button></NavLink> :
               fevorates.map((res) => res._id).includes(data._id) ?
                 <button className='wish-list' onClick={removeFromFevorates}>Remove from Wish List</button> :
                 <button className='wish-list' onClick={addToFevorates}>Add to Wish List</button>

@@ -20,7 +20,7 @@ const RelatedProductResults = ({ data }) => {
         );
         const data = await response.json();
         setRelatedProduct((prevData) => [...prevData, ...data]);
-      } catch (err) {}
+      } catch (err) { }
     };
 
     fetchData();
@@ -52,7 +52,7 @@ const RelatedProductResults = ({ data }) => {
   }, [targetRef.current]);
 
 
-   const responsive = {
+  const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
       items: 11
@@ -73,36 +73,36 @@ const RelatedProductResults = ({ data }) => {
       breakpoint: { max: 950, min: 700 },
       items: 4
     },
-    mobile2:{
+    mobile2: {
       breakpoint: { max: 700, min: 500 },
       items: 3
     },
-    mobile3:{
-      breakpoint: { max:500, min: 320 },
+    mobile3: {
+      breakpoint: { max: 500, min: 320 },
       items: 2
     },
-     mobile4:{
-      breakpoint: { max:320, min: 0 },
+    mobile4: {
+      breakpoint: { max: 320, min: 0 },
       items: 1
     }
   };
-  
 
-  
+
+
   return (
     <div className="RelatedProductSlider">
       <div className="f_df-df">
         <h2 className="res_we">Explore more products</h2>
         <div className="related-products-here" style={{ marginTop: '10px' }}>
           {/* <div className="related-slider-box"> */}
-          <Carousel responsive={responsive}  className="related-slider-box">
+          <Carousel responsive={responsive} className="related-slider-box">
             {relatedProduct
               .filter((i) => i.item?._id !== data._id)
               .map((res, index) => {
                 if (relatedProduct.length === index + 1) {
                   return (
                     <div key={res.item._id} ref={targetRef}>
-                      <HorizontalProductBox data={res.item} key={res.item._id}/>
+                      <HorizontalProductBox data={res.item} key={res.item._id} />
                     </div>
                   );
                 } else {
@@ -113,7 +113,7 @@ const RelatedProductResults = ({ data }) => {
                   );
                 }
               })}
-              </Carousel>
+          </Carousel>
           {/* </div> */}
         </div>
       </div>

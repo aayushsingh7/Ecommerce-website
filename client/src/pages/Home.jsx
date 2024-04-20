@@ -31,7 +31,7 @@ const Home = () => {
         setData([])
         setLoadingBox(false)
       }
-    } catch (err) {}
+    } catch (err) { }
   }
 
   const getSliderData = async () => {
@@ -45,22 +45,22 @@ const Home = () => {
       } else {
         setLoadingSlider(false)
       }
-    } catch (err) {}
+    } catch (err) { }
   }
-  document.title  = "Ecommerce"
+  document.title = "Ecommerce"
 
   return (
     <div className="Home">
       <Hero />
       <div className="display-items">
-      
+
         <MobileCategorySlider />
-        {loadingBox ?  <CategoryBoxContainerLoading />: <CategoryBoxesContainer data={data.slice(0, 1)} />}
-        {loadingSlider ? <ProductImageSliderLoading /> : <ProductImageSlider data={sliderData.slice(0, 10)} txt={"Find Your Favorites"}/> }
-        {loadingBox ?   <CategoryBoxContainerLoading /> : <CategoryBoxesContainer data={data.slice(1, 2)} />}
-        {loadingSlider ?  <ProductImageSliderLoading /> : <ProductImageSlider data={sliderData.slice(11, 20)} txt={"Check Out More Products"}/> }
+        {loadingBox ? <CategoryBoxContainerLoading /> : <CategoryBoxesContainer data={data.slice(0, 1)} />}
+        {loadingSlider ? <ProductImageSliderLoading /> : <ProductImageSlider data={sliderData.slice(0, 10)} txt={"Find Your Favorites"} />}
+        {loadingBox ? <CategoryBoxContainerLoading /> : <CategoryBoxesContainer data={data.slice(1, 2)} />}
+        {loadingSlider ? <ProductImageSliderLoading /> : <ProductImageSlider data={sliderData.slice(11, 20)} txt={"Check Out More Products"} />}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

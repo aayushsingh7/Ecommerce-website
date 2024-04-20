@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/Context'
 
 const Logout = () => {
-  const navigate = useNavigate()
-  const {notification} = useContext(AppContext)
-  document.title = "Logging out..."
+    const navigate = useNavigate()
+    const { notification } = useContext(AppContext)
+    document.title = "Logging out..."
     useEffect(() => {
         logout()
     }, [])
@@ -15,13 +15,13 @@ const Logout = () => {
             let lg = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/logout', { method: "GET", credentials: "include" })
             let response = await lg.json()
             if (lg.ok) {
-               notification("Logout successfully")
-               navigate('/login')
+                notification("Logout successfully")
+                navigate('/login')
             } else {
                 notification("Something went wrong")
                 navigate('/account')
             }
-        } catch (err) {}
+        } catch (err) { }
     }
 
     return (

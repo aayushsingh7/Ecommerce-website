@@ -24,9 +24,9 @@ const SearchResults = () => {
 
   useEffect(() => {
     setFilterShow(false)
-    if(!minPrice && !maxPrice && !maxRatings && !minRatings && query?.includes("all")){
-    getAllProducts()
-    }else{
+    if (!minPrice && !maxPrice && !maxRatings && !minRatings && query?.includes("all")) {
+      getAllProducts()
+    } else {
       getSearchResults()
     }
   }, [location.search]);
@@ -38,17 +38,16 @@ const SearchResults = () => {
       if (query && !maxPrice && !minPrice && !minRatings && !maxRatings) {
         url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${query}`;
       } else if (query && minPrice && maxPrice) {
-       
-        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${
-          query ? query.includes("all") ? "a" : query : category ? category : seller}&maxPrice=${maxPrice}&minPrice=${minPrice}`;
+
+        url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${query ? query.includes("all") ? "a" : query : category ? category : seller}&maxPrice=${maxPrice}&minPrice=${minPrice}`;
       } else if (minRatings && maxRatings) {
-      
+
         url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${query ? query.includes("all") ? "a" : query : category ? category : seller}&maxRatings=${maxRatings}&minRatings=${minRatings}`;
       } else if (category) {
         url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?category=${category}`;
       } else {
         url = `https://ecommerce-website-9k8k.onrender.com/api/v1/search?seller=${seller}`;
-      }      
+      }
 
       setResult(["search"])
       setLoading(true)
@@ -61,27 +60,27 @@ const SearchResults = () => {
       } else {
         setLoading(false)
       }
-    } catch (err) {}
+    } catch (err) { }
   }
 
-  const getAllProducts = async()=> {
+  const getAllProducts = async () => {
     try {
       setResult(["search"])
       setLoading(true)
-      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/all-product',{
-        method:"GET",
-        credentials:"include",
-        headers:{"Content-Type":"application/json"}
+      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/all-product', {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" }
       })
       let response = await data.json()
-      if(data.ok){
+      if (data.ok) {
         setSearchResults(response)
         setLoading(false)
-      }else{
+      } else {
         setSearchResults([])
         setLoading(false)
       }
-    } catch (err) {}
+    } catch (err) { }
   }
 
   return (

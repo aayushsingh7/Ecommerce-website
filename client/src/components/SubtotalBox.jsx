@@ -5,10 +5,10 @@ import { AppContext } from '../context/Context'
 
 const SubtotalBox = () => {
     const location = useLocation()
-    const { cartData, fevorates, notification} = useContext(AppContext)
-    
+    const { cartData, fevorates, notification } = useContext(AppContext)
+
     const buyNow = async () => {
-       // Not available
+        // Not available
     }
 
     const addToCart = async () => {
@@ -21,7 +21,7 @@ const SubtotalBox = () => {
             })
             let response = await data.json()
             if (data.ok) {
-              notification("Item added to wishlist")
+                notification("Item added to wishlist")
             }
         } catch (err) { }
     }
@@ -47,13 +47,13 @@ const SubtotalBox = () => {
                     <p><span>Your order is eligible for Free Delivery</span> select this option at checkout</p>
                 </div>
 
-               <NavLink to={'/order'} style={{textDecoration:"none",width:"100%"}}>
-               <div className="btn-options">
-                    <button className="buy-now" style={{background:"#ffd000ee"}}
-                        onClick={location.pathname.startsWith('/cart') ? buyNow : addToCart}>{location.pathname.startsWith('/cart') ?
-                            `Proceed to buy (${cartData.length})` : "Add to cart"}</button>
-                </div>
-               </NavLink>
+                <NavLink to={'/order'} style={{ textDecoration: "none", width: "100%" }}>
+                    <div className="btn-options">
+                        <button className="buy-now" style={{ background: "#ffd000ee" }}
+                            onClick={location.pathname.startsWith('/cart') ? buyNow : addToCart}>{location.pathname.startsWith('/cart') ?
+                                `Proceed to buy (${cartData.length})` : "Add to cart"}</button>
+                    </div>
+                </NavLink>
 
 
             </div>

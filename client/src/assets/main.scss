@@ -140,7 +140,7 @@ body {
 .Notification {
   padding: 20px;
   font-size: 1.3rem;
-  background:white;
+  background: white;
   color: black;
   width: 93%;
   max-width: 500px;
@@ -157,7 +157,7 @@ body {
   box-shadow: 0px 0px 4px 2px #545454;
 }
 
-.sign-in-btn{
+.sign-in-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,7 +170,8 @@ body {
   color: #0079e3;
   font-size: 1.2rem;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     background: #0079e34a;
   }
 }
@@ -242,7 +243,8 @@ body {
     width: 100%;
     color: white;
     font-size: 1.3rem;
-    background: #004179;;
+    background: #004179;
+    ;
     margin-top: 30px;
     cursor: pointer;
     @include flex(center, center)
@@ -261,7 +263,7 @@ body {
   -webkit-text-fill-color: transparent;
   display: inline-block;
   margin-bottom: 20px;
-  color:#004179;
+  color: #004179;
   border-radius: 60px;
   padding: 4px;
 }
@@ -300,7 +302,7 @@ body {
   justify-content: space-between;
   width: 100%;
   // background-color: #131921;
-  background:#001222;
+  background: #001222;
   height: 70px;
   padding: 20px;
   color: black;
@@ -1713,14 +1715,14 @@ body {
 
 .f_df-df {
   border-top: 1px solid #ccc;
-  padding:20px 15px 0px 15px;
+  padding: 20px 15px 0px 15px;
 }
 
 .related-slider-box {
   width: 100%;
   height: auto;
   background: white;
- 
+
   padding: 10px 0px 10px 0px;
 
   &:hover button {
@@ -1810,7 +1812,7 @@ body {
 
 .Cart {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background: white;
   padding: 10px;
@@ -2192,27 +2194,29 @@ react-multiple-carousel__arrow:hover {
   }
 }
 
-.platform-icons{
+.platform-icons {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
 }
 
-.icons-two-navigate{
+.icons-two-navigate {
   font-size: 45px;
-  color: #c1c1c1;;
+  color: #c1c1c1;
+  ;
   border: 1px solid #c1c1c1;
   border-radius: 50px;
   padding: 7px;
-  &:hover{
+
+  &:hover {
     background: #c1c1c1;
     color: #001222;
   }
 }
 
 
-.Footer{
+.Footer {
   width: 100%;
   background: #001222;
   display: flex;
@@ -2220,23 +2224,25 @@ react-multiple-carousel__arrow:hover {
   padding: 20px 20px 60px 20px;
   justify-content: flex-start;
   flex-direction: column;
-  h2{
+
+  h2 {
     font-size: 3rem;
     color: #c1c1c1;
     margin-bottom: 10px;
   }
-  p{
+
+  p {
     font-size: 1.1rem;
     color: #545454;
     text-align: center;
-    width:100%;
+    width: 100%;
     max-width: 800px;
     line-height: 25px;
     margin-bottom: 5px;
   }
 }
 
-.follow-us-div{
+.follow-us-div {
   margin-top: 30px;
 }
 
@@ -2244,12 +2250,14 @@ react-multiple-carousel__arrow:hover {
   .slider img {
     height: 14vw;
   }
+
   .react-multiple-carousel__arrow--right {
     right: calc(4% - 35px);
   }
+
   .react-multiple-carousel__arrow--left {
     left: calc(4% - 35px);
-}
+  }
 }
 
 
@@ -2393,7 +2401,7 @@ react-multiple-carousel__arrow:hover {
     padding: 10px 0px 10px 10px;
   }
 
-  .bbbb{
+  .bbbb {
     padding: 10px 15px 10px 15px;
   }
 
@@ -2441,14 +2449,16 @@ react-multiple-carousel__arrow:hover {
   .manage-display-price {
     width: 100%;
   }
-  .RelatedProductSlider{
-    button{
+
+  .RelatedProductSlider {
+    button {
       opacity: 1;
       padding: 5px;
     }
   }
-  .ProductImageSlider{
-    button{
+
+  .ProductImageSlider {
+    button {
       opacity: 1;
       padding: 5px;
     }
@@ -2494,9 +2504,10 @@ react-multiple-carousel__arrow:hover {
     width: 100%;
   }
 
-  .bbbb{
+  .bbbb {
     padding: 0px;
   }
+
   .Product---Here {
     padding: 5px 5px 0px 5px;
   }
@@ -2704,7 +2715,8 @@ react-multiple-carousel__arrow:hover {
       height: 20vh;
     }
   }
-  .sign-in-btn{
+
+  .sign-in-btn {
     font-size: 1.4rem;
   }
 }
@@ -2758,29 +2770,35 @@ react-multiple-carousel__arrow:hover {
 }
 
 @media only screen and (max-width: 499px) {
-  .pop-show{
+  .pop-show {
     top: 8%;
   }
-  .sign-in-btn{
+
+  .sign-in-btn {
     font-size: 1.5rem;
     padding: 13px 20px;
   }
-  .Footer{
-    p{
+
+  .Footer {
+    p {
       font-size: 1.2rem;
     }
   }
-  .ProductImageSlider{
-    button{
+
+  .ProductImageSlider {
+    button {
       opacity: 1;
     }
   }
+
   .react-multiple-carousel__arrow--right {
     right: calc(4% - 9px);
   }
+
   .react-multiple-carousel__arrow--left {
     left: calc(4% - 9px);
-}
+  }
+
   .Product--box {
     height: 175px;
   }
@@ -2792,8 +2810,9 @@ react-multiple-carousel__arrow:hover {
   .Notification {
     font-size: 1.7rem;
   }
-  .related-slider-box{
-    button{
+
+  .related-slider-box {
+    button {
       opacity: 1;
       padding: 1px;
     }

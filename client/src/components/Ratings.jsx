@@ -26,7 +26,7 @@ const Ratings = ({ data, productId }) => {
         body: JSON.stringify({ productId: productId, stars: avgRating })
       })
       let response = await update.json()
-    } catch (err) {}
+    } catch (err) { }
   }
 
   return (

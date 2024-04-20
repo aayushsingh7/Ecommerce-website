@@ -7,15 +7,15 @@ import getExpectedDeliveryDate from '../utils/getExpectedDiliveryDate'
 
 const ProductBox = ({ data }) => {
   const [quantity, setQuantity] = useState(data.quantity)
-  const { cartData , notification , setCartData , setFevorates} = useContext(AppContext)
+  const { cartData, notification, setCartData, setFevorates } = useContext(AppContext)
   let socket;
 
 
   const deleteCart = async (e) => {
     e.preventDefault()
     try {
-      setCartData((prevCartData)=> {
-        return  prevCartData.filter((cart)=> cart._id !== data._id)
+      setCartData((prevCartData) => {
+        return prevCartData.filter((cart) => cart._id !== data._id)
       })
       let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/remove-from-cart', {
         method: "PUT",
@@ -25,15 +25,15 @@ const ProductBox = ({ data }) => {
       })
       let response = await apiData.json()
       if (apiData.ok) {
-      notification("Item removed from cart")
+        notification("Item removed from cart")
       }
-    } catch (err) { notification("Something went wrong")}
+    } catch (err) { notification("Something went wrong") }
   }
 
   const addToCart = async (e) => {
     e.preventDefault()
     try {
-      setCartData([...cartData,data])
+      setCartData([...cartData, data])
       let apiData = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/add-to-cart', {
         method: "PUT",
         credentials: "include",
@@ -42,13 +42,13 @@ const ProductBox = ({ data }) => {
       })
       let response = await apiData.json()
       if (apiData.ok) {
-       notification("Item added to cart")
+        notification("Item added to cart")
       }
-    } catch (err) { notification("Something went wrong")}
+    } catch (err) { notification("Something went wrong") }
   }
 
   return (
-    <NavLink to={`/product/${data._id}`} onClick={()=> scrollTo(0,0)} style={{ textDecoration: "none", color: "black", width: "100%" }}>
+    <NavLink to={`/product/${data._id}`} onClick={() => scrollTo(0, 0)} style={{ textDecoration: "none", color: "black", width: "100%" }}>
       <div className="Product--box">
         <div className="product-image">
           <img src={data.images[0]} alt="" />
@@ -58,7 +58,7 @@ const ProductBox = ({ data }) => {
           <p className="product_name wrap-add">{data.name}</p>
           <div
             style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "8px" }} >
-            <Ratings data={data.reviews}  productId={data._id}/>
+            <Ratings data={data.reviews} productId={data._id} />
             {/* <p style={{ marginLeft: "5px", fontSize: "16px" }}>5</p>{" "} */}
             <span
               style={{ marginLeft: "7px", color: "#007981", fontSize: "14px" }}
@@ -112,11 +112,11 @@ const ProductBox = ({ data }) => {
               </div>
               :
               location.pathname.startsWith('/wishlist') ?
-                <div className='flex-center' style={{justifyContent:"flex-start"}}>
+                <div className='flex-center' style={{ justifyContent: "flex-start" }}>
                   {
                     cartData.map((res) => res._id).includes(data._id) ?
-                      <button className='remove' onClick={deleteCart} style={{ margin: "10px 0px 10px 0px",marginLeft:"0px"}}>Remove from cart</button> :
-                      <button className='add-cart' onClick={addToCart} style={{ marginLeft: "0px",maxWidth:"400px", margin: "10px 0px 10px 0px"}}>Add to cart</button>
+                      <button className='remove' onClick={deleteCart} style={{ margin: "10px 0px 10px 0px", marginLeft: "0px" }}>Remove from cart</button> :
+                      <button className='add-cart' onClick={addToCart} style={{ marginLeft: "0px", maxWidth: "400px", margin: "10px 0px 10px 0px" }}>Add to cart</button>
                   }
                 </div>
                 :

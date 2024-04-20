@@ -68,7 +68,7 @@ const Login = () => {
             <BsFillLockFill style={{ color: "#a0a0a0", fontSize: "25px", position: "absolute", left: "3%", bottom: "24%" }} />
           </div>
           <NavLink to={'/reset-password'} className="nav-link" style={{ width: "100%", textAlign: "end", marginTop: "5px" }}>
-            <span style={{color:"#004179",fontWeight:"600"}}>Forgot password</span>
+            <span style={{ color: "#004179", fontWeight: "600" }}>Forgot password</span>
           </NavLink>
         </div>
         {

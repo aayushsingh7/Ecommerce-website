@@ -16,32 +16,32 @@ const ResetPassword = () => {
   document.title = "Reset password"
 
   const forgotPassword = async () => {
-  if(email){
-    try {
-      document.title = "Loading..."
-      setLoading(true)
-      let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/forgot-password', {
-        method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email })
-      })
-      let response = await data.json()
-      if (data.ok) {
+    if (email) {
+      try {
+        document.title = "Loading..."
+        setLoading(true)
+        let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/forgot-password', {
+          method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
+        })
+        let response = await data.json()
+        if (data.ok) {
+          setLoading(false)
+          setSuccess(true)
+          document.title = `${"Email send successfully"}`
+        } else {
+          notification(response.msg)
+          setLoading(false)
+          setSuccess(false)
+          document.title = "Reset password"
+        }
+      } catch (err) {
         setLoading(false)
-        setSuccess(true)
-        document.title = `${"Email send successfully"}`
-      } else {
-        notification(response.msg)
-        setLoading(false)
-        setSuccess(false)
-        document.title = "Reset password"
+        notification("Something went wrong")
       }
-    } catch (err) {
-      setLoading(false)
-      notification("Something went wrong")
+    } else {
+      notification("Please enter your email")
     }
-  }else{
-    notification("Please enter your email")
-  }
   }
 
   const handleBack = () => {
@@ -68,7 +68,7 @@ const ResetPassword = () => {
             {/* <p className='person-heading'>User Login</p> */}
             <div className="user-inputs">
               <div className='input-icons-div'>
-                <input type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} name="email" autoComplete='off'/>
+                <input type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} name="email" autoComplete='off' />
                 <MdEmail style={{ color: "#a0a0a0", fontSize: "25px", position: "absolute", left: "3%", bottom: "23%" }} />
               </div>
             </div>
