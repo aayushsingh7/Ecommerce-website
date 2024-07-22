@@ -14,7 +14,7 @@ const ProductDetails = ({ data,  reviews }) => {
       <p className='product_name large'>{data.name}</p>
 
       <div className="ratings-component" style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", padding: "10px 0px 10px 0px", borderBottom: "1px solid #e7e7e7", width: "100%" }}>
-        <Ratings data={reviews} productId={data?._id} />
+        <Ratings data={data} productId={data?._id} />
         <p style={{ color: "#00798c", marginLeft: "20px",fontSize:"1.2rem"}} className="ppp">{reviews?.length} ratings</p>
       </div>
 

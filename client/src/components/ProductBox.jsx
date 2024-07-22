@@ -47,6 +47,8 @@ const ProductBox = ({ data }) => {
     } catch (err) { notification("Something went wrong") }
   }
 
+  console.log(data)
+
   return (
     <NavLink to={`/product/${data._id}`} onClick={() => scrollTo(0, 0)} style={{ textDecoration: "none", color: "black", width: "100%" }}>
       <div className="Product--box">
@@ -58,7 +60,7 @@ const ProductBox = ({ data }) => {
           <p className="product_name wrap-add">{data.name}</p>
           <div
             style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "8px" }} >
-            <Ratings data={data.reviews} productId={data._id} />
+            <Ratings data={data} productId={data._id} />
             {/* <p style={{ marginLeft: "5px", fontSize: "16px" }}>5</p>{" "} */}
             <span
               style={{ marginLeft: "7px", color: "#007981", fontSize: "14px" }}

@@ -48,6 +48,7 @@ const AddReview = ({ setReviews, productId }) => {
       try {
         setLoading(true)
         let formData = new FormData(formRef.current)
+
         formData.append('stars', star)
         formData.append('productId', productId)
         let data = await fetch('https://ecommerce-website-9k8k.onrender.com/api/v1/add-review', {

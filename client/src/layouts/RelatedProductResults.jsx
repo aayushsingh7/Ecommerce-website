@@ -16,10 +16,12 @@ const RelatedProductResults = ({ data }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=${"a"}&page=${pageNumber}`
+          `https://ecommerce-website-9k8k.onrender.com/api/v1/search?query=all&&page=${pageNumber}`
         );
-        const data = await response.json();
-        setRelatedProduct((prevData) => [...prevData, ...data]);
+
+        const da = await response.json();
+        console.log(da)
+        setRelatedProduct((prevData) => [...prevData, ...da]);
       } catch (err) { }
     };
 
@@ -97,18 +99,18 @@ const RelatedProductResults = ({ data }) => {
           {/* <div className="related-slider-box"> */}
           <Carousel responsive={responsive} className="related-slider-box">
             {relatedProduct
-              .filter((i) => i.item?._id !== data._id)
-              .map((res, index) => {
+              .filter((i) => i.item?._id !== data?._id)
+              .map((item, index) => {
                 if (relatedProduct.length === index + 1) {
                   return (
-                    <div key={res.item._id} ref={targetRef}>
-                      <HorizontalProductBox data={res.item} key={res.item._id} />
+                    <div key={item._id} ref={targetRef}>
+                      <HorizontalProductBox data={item} key={item?._id} />
                     </div>
                   );
                 } else {
                   return (
-                    <div key={res.item._id}>
-                      <HorizontalProductBox data={res.item} />
+                    <div key={item?._id}>
+                      <HorizontalProductBox data={item} />
                     </div>
                   );
                 }

@@ -14,7 +14,7 @@ const HorizontalProductBox = ({ data }) => {
      <p className='r-name wrap-add-four'>{data.name}</p>
    
    <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-   <Ratings data={data.reviews}/>
+   <Ratings data={data}/>
    <span style={{marginLeft:"6px",position:"relative",top:"1px",color:"#00798c",fontSize:"15px"}}>{data.reviews?.length}</span>
    </div>
    

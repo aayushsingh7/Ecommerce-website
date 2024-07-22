@@ -4,15 +4,15 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { AppContext } from '../context/Context';
 import { NavLink } from 'react-router-dom';
 
-const ReviewsPercentage = ({ data }) => {
+const ReviewsPercentage = ({ data,reviews }) => {
       const { setOpenReview , user } = useContext(AppContext);
 
         const ratingCount = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-        data?.forEach(review => {
+        reviews?.forEach(review => {
             ratingCount[review.stars]++;
         });
 
-        const totalReviews = data.length;
+        const totalReviews = data.reviewedBy;
         const fiveStarPercent = totalReviews > 0 ? (ratingCount[5] / totalReviews * 100).toFixed(0) : 0;
         const fourStarPercent = totalReviews > 0 ? (ratingCount[4] / totalReviews * 100).toFixed(0) : 0;
         const threeStarPercent = totalReviews > 0 ? (ratingCount[3] / totalReviews * 100).toFixed(0) : 0;
